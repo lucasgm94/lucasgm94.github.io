@@ -1,435 +1,189 @@
 <!DOCTYPE HTML>
 <html lang="en">
-	<head>
-		<title>Portfolio – Lucas Martinez</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <head>
+    <title>Lucas Martinez – Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  </head>
 
-		<style>
-			/* Lang switcher styling (simple) */
-			.lang-switcher {
-				position: fixed;
-				top: 10px;
-				right: 10px;
-				z-index: 1000;
-				display: flex;
-				align-items: center;
-				gap: 6px;
-			}
-			.lang-switcher button {
-				background: transparent;
-				border: 1px solid rgba(255,255,255,0.9);
-				color: #fff;
-				padding: 6px 10px;
-				cursor: pointer;
-				border-radius: 8px;
-				font-size: 14px;
-				transition: .15s;
-				backdrop-filter: blur(4px);
-			}
-			.lang-switcher button.active {
-				background: rgba(255,255,255,0.95);
-				color: #000;
-				font-weight: 600;
-			}
-			.lang-switcher button:hover { transform: translateY(-1px); }
-			/* Small responsive tweak */
-			@media (max-width:600px){
-				.lang-switcher { right: 6px; top: 6px; }
-				.lang-switcher button { padding:4px 8px; font-size:13px; }
-			}
-		</style>
-	</head>
-	<body class="is-preload">
+  <body class="is-preload">
 
-		<!-- Language Switcher -->
-		<div class="lang-switcher" role="navigation" aria-label="Language switcher">
-			<button id="btn-en" onclick="setLanguage('en')">EN</button>
-			<button id="btn-es" onclick="setLanguage('es')">ES</button>
-		</div>
+    <!-- Wrapper -->
+    <div id="wrapper">
 
-		<!-- Sidebar -->
-		<section id="sidebar">
-			<div class="inner">
-				<nav>
-					<ul>
-						<li><a href="#intro" data-key="navWelcome">Welcome 👋</a></li>
-						<li><a href="#one" data-key="navAbout">About Me 💼</a></li>
-						<li><a href="#two" data-key="navSkills">Skills 🔧</a></li>
-						<li><a href="#four" data-key="navCerts">Certifications 🎓</a></li>
-						<li><a href="#three" data-key="navContact">Contact 📫</a></li>
-					</ul>
-				</nav>
-			</div>
-		</section>
+      <!-- Header -->
+      <header id="header" class="alt">
+        <h1 data-key="navWelcome">Welcome 👋</h1>
+        <nav>
+          <ul>
+            <li><a href="#intro" data-key="navAbout">About Me 💼</a></li>
+            <li><a href="#skills" data-key="navSkills">Skills 🔧</a></li>
+            <li><a href="#certifications" data-key="navCerts">Certifications 🎓</a></li>
+            <li><a href="#contact" data-key="navContact">Contact 📫</a></li>
+          </ul>
+        </nav>
+        <!-- Language Switcher -->
+        <div class="lang-switcher" style="margin-top:10px;">
+          <button>EN</button>
+          <button>ES</button>
+        </div>
+      </header>
 
-		<!-- Wrapper -->
-		<div id="wrapper">
+      <!-- Intro -->
+      <section id="intro" class="main">
+        <div class="spotlight">
+          <div class="content">
+            <header class="major">
+              <h2 data-key="introTitle">Hey there, I'm Lucas Martinez 👋</h2>
+            </header>
+            <p data-key="introText">
+              Functional Analyst 💻 passionate about learning, growth, and making things work smarter.
+              I love tackling new challenges, optimizing processes, and exploring innovative solutions —
+              especially in cybersecurity, where I can turn curiosity into real impact 🚀🛡️.
+            </p>
+            <ul class="actions">
+              <li><a href="#about" class="button" data-key="learnMore">Learn more</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-			<!-- Intro -->
-			<section id="intro" class="wrapper style1 fullscreen fade-up">
-				<div class="inner">
-					<h1 data-key="introTitle">Hey there, I'm Lucas Martinez 👋</h1>
-					<p data-key="introText">
-						Functional Analyst 💻 passionate about learning, growth, and making things work smarter. I love tackling new challenges, optimizing processes, and exploring innovative solutions — especially in cybersecurity, where I can turn curiosity into real impact 🚀🛡️.
-					</p>
-					<ul class="actions">
-						<li><a href="#one" class="button scrolly" data-key="learnMore">Learn more</a></li>
-					</ul>
-				</div>
-			</section>
+      <!-- About Me -->
+      <section id="about" class="main special">
+        <header class="major">
+          <h2 data-key="aboutTitle">About Me 💼</h2>
+        </header>
+        <p data-key="aboutText">
+          I currently work as a Technical Functional Analyst in the financial sector 💰, focusing on current
+          accounts and debt collection using various web-based applications 🌍 and the ERP Softland 📄, while
+          also generating reports with Power BI 📈. In parallel, I have completed studies in cybersecurity 🔐,
+          data science 📊, digital transformation 🧬, and PL/SQL 🛠️, which have strengthened my analytical
+          mindset and expanded my technical skill set 🚀.
+        </p>
+      </section>
 
-			<!-- One (About) -->
-			<section id="one" class="wrapper style2 spotlights">
-				<section>
-					<a href="#" class="image"><img src="lucas.jpeg" alt="" data-key-alt="profileAlt" data-position="center center"/></a>
-					<div class="content">
-						<div class="inner">
-							<h2 data-key="aboutTitle">About Me 💼</h2>
-							<p data-key="aboutText">
-								I currently work as a Technical Functional Analyst in the financial sector 💰, focusing on current accounts and debt collection using various web-based applications 🌍 and the ERP Softland 📄, while also generating reports with Power BI 📈. In parallel, I have completed studies in cybersecurity 🔐, data science 📊, digital transformation 🧬, and PL/SQL 🛠️, which have strengthened my analytical mindset and expanded my technical skill set 🚀.
-							</p>
-							<ul class="actions">
-								<li><a href="#two" class="button" data-key="mySkills">My Skills 🔧</a></li>
-							</ul>
-						</div>
-					</div>
-				</section>
-			</section>
+      <!-- Skills -->
+      <section id="skills" class="main special">
+        <header class="major">
+          <h2 data-key="skillsTitle">Skills 🔧</h2>
+          <p data-key="skillsIntro">
+            I enjoy working across disciplines and constantly updating my knowledge.
+            My profile combines technical curiosity, communication skills, and an analytical mindset.
+          </p>
+        </header>
+        <ul class="features">
+          <li>SQL / PL-SQL</li>
+          <li>Power BI</li>
+          <li>ERP Softland</li>
+          <li>HTML / CSS / JavaScript</li>
+          <li>Python</li>
+          <li>Software Testing</li>
+        </ul>
+      </section>
 
-			<!-- Two (Skills) -->
-			<section id="two" class="wrapper style3 fade-up">
-				<div class="inner">
-					<h2 data-key="skillsTitle">Skills 🔧</h2>
-					<p data-key="skillsIntro">I enjoy working across disciplines and constantly updating my knowledge. My profile combines technical curiosity, communication skills, and an analytical mindset.</p>
+      <!-- Certifications -->
+      <section id="certifications" class="main special">
+        <header class="major">
+          <h2 data-key="certTitle">Completed Certifications & Languages 🎓</h2>
+        </header>
+        <ul>
+          <li>Cybersecurity Fundamentals – Cisco</li>
+          <li>Data Science Foundations – IBM</li>
+          <li>Digital Transformation – Google</li>
+          <li>PL/SQL Programming – Oracle</li>
+          <li>English – Advanced (C1)</li>
+          <li>Spanish – Native 🇦🇷</li>
+        </ul>
+      </section>
 
-					<div class="features">
-						<section>
-							<span class="icon solid major fa-code"></span>
-							<h3 data-key="techTitle">Technologies & Tools</h3>
-							<div data-key="techList">
-								<ul>
-									<li>Power BI 📊</li>
-									<li>SQL - PL/SQL 🗃️</li>
-									<li>Python 🐍</li>
-									<li>QA & Manual Testing 🔍</li>
-									<li>ERP Systems (Softland) 📋</li>
-									<li>Web-based applications 🌐</li>
-								</ul>
-							</div>
-						</section>
+      <!-- Contact -->
+      <section id="contact" class="main special">
+        <header class="major">
+          <h2 data-key="contactTitle">Contact 📫</h2>
+          <p data-key="contactText">
+            Find me on my professional profiles below. 🌟
+          </p>
+        </header>
+        <ul class="icons">
+          <li><a href="https://linkedin.com" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
+          <li><a href="https://github.com" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+        </ul>
+      </section>
 
-						<section>
-							<span class="icon solid major fa-shield-alt"></span>
-							<h3 data-key="learnFocusTitle">Learning Focus</h3>
-							<div data-key="learnFocusList">
-								<ul>
-									<li>Strengthening cybersecurity foundations (networking, threat modeling, risk management) 🔐</li>
-									<li>Improving Python and SQL skills for automation and analysis 🐍🗃️</li>
-									<li>Expanding data analysis techniques with Power BI and data storytelling 📊</li>
-								</ul>
-							</div>
-						</section>
+    </div>
 
-						<section>
-							<span class="icon solid major fa-users"></span>
-							<h3 data-key="softTitle">Soft Skills</h3>
-							<div data-key="softList">
-								<ul>
-									<li>Analytical thinking 🧠</li>
-									<li>Autonomy and adaptability 🔄</li>
-									<li>Teamwork and communication 🗣️</li>
-									<li>Problem-solving 🧩</li>
-								</ul>
-							</div>
-						</section>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
-						<section>
-							<span class="icon solid major fa-satellite"></span>
-							<h3 data-key="coursesTitle">Ongoing Courses</h3>
-							<div data-key="coursesList">
-								<ul>
-									<li>Data Analysis – LinkedIn 🧠📊</li>
-									<li>Jr. Cybersecurity Analyst – Cisco 🔐</li>
-									<li>Python Programming – Udemy 🐍</li>  
-									<li>SQL Programming – Udemy 🗃️</li>
-									<li>Software Testing (QA) – Udemy 🧪</li>
-								</ul>
-							</div>
-						</section>
-					</div>
+    <!-- Language Script -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
 
-				</div>
-			</section>
+      const translations = {
+        en: {
+          navWelcome: "Welcome 👋",
+          navAbout: "About Me 💼",
+          navSkills: "Skills 🔧",
+          navCerts: "Certifications 🎓",
+          navContact: "Contact 📫",
+          introTitle: "Hey there, I'm Lucas Martinez 👋",
+          introText: "Functional Analyst 💻 passionate about learning, growth, and making things work smarter. I love tackling new challenges, optimizing processes, and exploring innovative solutions — especially in cybersecurity, where I can turn curiosity into real impact 🚀🛡️.",
+          learnMore: "Learn more",
+          aboutTitle: "About Me 💼",
+          aboutText: "I currently work as a Technical Functional Analyst in the financial sector 💰, focusing on current accounts and debt collection using various web-based applications 🌍 and the ERP Softland 📄, while also generating reports with Power BI 📈. In parallel, I have completed studies in cybersecurity 🔐, data science 📊, digital transformation 🧬, and PL/SQL 🛠️, which have strengthened my analytical mindset and expanded my technical skill set 🚀.",
+          skillsTitle: "Skills 🔧",
+          skillsIntro: "I enjoy working across disciplines and constantly updating my knowledge. My profile combines technical curiosity, communication skills, and an analytical mindset.",
+          certTitle: "Completed Certifications & Languages 🎓",
+          contactTitle: "Contact 📫",
+          contactText: "Find me on my professional profiles below. 🌟"
+        },
+        es: {
+          navWelcome: "Inicio 👋",
+          navAbout: "Sobre mí 💼",
+          navSkills: "Habilidades 🔧",
+          navCerts: "Certificaciones 🎓",
+          navContact: "Contacto 📫",
+          introTitle: "¡Hola! Soy Lucas Martinez 👋",
+          introText: "Analista Funcional 💻 apasionado por el aprendizaje, el crecimiento y la mejora continua. Me encanta asumir nuevos desafíos, optimizar procesos y explorar soluciones innovadoras — especialmente en ciberseguridad, donde puedo transformar la curiosidad en impacto real 🚀🛡️.",
+          learnMore: "Ver más",
+          aboutTitle: "Sobre mí 💼",
+          aboutText: "Trabajo como Analista Funcional Técnico en el sector financiero 💰, enfocado en cuentas corrientes y cobranzas mediante distintas aplicaciones web 🌍 y el ERP Softland 📄, además de generar reportes con Power BI 📈. En paralelo, completé estudios en ciberseguridad 🔐, ciencia de datos 📊, transformación digital 🧬 y PL/SQL 🛠️, que fortalecieron mi mentalidad analítica y ampliaron mis habilidades técnicas 🚀.",
+          skillsTitle: "Habilidades 🔧",
+          skillsIntro: "Disfruto trabajar entre distintas áreas y actualizar constantemente mis conocimientos. Mi perfil combina curiosidad técnica, buena comunicación y pensamiento analítico.",
+          certTitle: "Certificaciones y Lenguajes 🎓",
+          contactTitle: "Contacto 📫",
+          contactText: "Podés encontrarme en mis perfiles profesionales a continuación. 🌟"
+        }
+      };
 
-			<!-- Four (Certifications & Languages) -->
-			<section id="four" class="wrapper style5 fade-up">
-				<div class="inner">
-					<h2 data-key="certTitle">Completed Certifications & Languages 🎓</h2>
+      function setLanguage(lang) {
+        document.querySelectorAll("[data-key]").forEach(el => {
+          const key = el.getAttribute("data-key");
+          if (translations[lang][key]) el.textContent = translations[lang][key];
+        });
+        document.documentElement.lang = lang;
+        localStorage.setItem("language", lang);
+      }
 
-					<h3><span class="icon solid fa-certificate"></span> <span data-key="certsHeading">Certifications</span></h3>
-					<div data-key="certListHtml">
-						<ul>
-						  <li>Accounting Assistant – Eddis Educativa – Nov. 2023</li>
-						  <li>Introduction to Cybersecurity – Fundación Telefónica – Nov. 2024</li>
-						  <li>Introduction to Cybersecurity – Cisco Networking Academy – Nov. 2024</li>
-						  <li>Introduction to Information Security – Fundación Telefónica – Nov. 2024</li>
-						  <li>Introduction to Data Science – Santander Open Academy – Mar. 2025</li>
-						  <li>Digital Transformation – Santander Open Academy – Mar. 2025</li>
-						  <li>Oracle Database Programming, PL/SQL Language - e-Learning UTN – Apr. 2025</li>
-						  <li>Introduction to Generative IA - Santander Open Academy - Jul. 2025</li>
-						  <li>Cloud Computing - Google Skillshop - Jul. 2025</li>
-						  <li>Performing a Basic Audit of yours AWS Enviroment – AWS Skill Builder – Sep. 2025</li>
-						  <li>AWS Shared Responsability Model - AWS Skill Builder – Sep. 2025</li>
-						  <li>Introduction to AWS Identity and Access Management (IAM) - AWS Skill Builder – Sep. 2025</li>
-						  <li>Introduction to AWS Key Management Service - AWS Skill Builder – Sep. 2025</li>
-						  <li>Introduction to the Threat Landscape 3.0 - Fortinet – Sep. 2025</li>
-						  <li>Networking Basics – Cisco Networking Academy – Ago. 2025</li>
-						</ul>
-					</div>
+      const savedLang = localStorage.getItem("language") || "en";
+      setLanguage(savedLang);
 
-					<h3><span class="icon solid fa-comment"></span> <span data-key="langsHeading">Languages</span></h3>
-					<div data-key="langsListHtml">
-						<ul>
-						  <li>Spanish – Native</li>
-						  <li>English – Intermediate · EF SET C1 Advanced · Score 65/100</li>
-						  <li>Japanese – Intermediate · JLPT N5 · Score 144/180</li>
-						</ul>
-					</div>
-				</div>
-			</section>
+      document.querySelectorAll(".lang-switcher button").forEach(btn => {
+        btn.addEventListener("click", () => {
+          setLanguage(btn.textContent.toLowerCase());
+        });
+      });
 
-			<!-- Three (Contact) -->
-			<section id="three" class="wrapper style1 fade-up">
-				<div class="inner">
-					<h2 data-key="contactTitle">Contact 📫</h2>
-					<p data-key="contactText">Find me on my professional profiles below. 🌟</p>
-					<div class="split style1">
-						<section>
-							<ul class="contact">
-								<li>
-									<h3 data-key="socialHeading">Social Media 🌍</h3>
-									<ul class="icons">
-										<li><a href="https://www.linkedin.com/in/lucas-gaston-martinez/" target="_blank" class="icon brands fa-linkedin-in"> <span class="label">LinkedIn</span></a></li>
-										<li><a href="https://github.com/LucasGM94/LucasGM94.github.io" target="_blank" class="icon brands fa-github"> <span class="label">GitHub</span></a></li>
-									</ul>
-								</li>
-							</ul>
-						</section>
-					</div>
-				</div>
-			</section>
+    });
+    </script>
 
-		</div>
-
-		<!-- Scripts (originals) -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-
-		<!-- Language Script (full translations, spanish estilo argentino) -->
-		<script>
-			const translations = {
-				en: {
-					navWelcome: "Welcome 👋",
-					navAbout: "About Me 💼",
-					navSkills: "Skills 🔧",
-					navCerts: "Certifications 🎓",
-					navContact: "Contact 📫",
-					introTitle: "Hey there, I'm Lucas Martinez 👋",
-					introText: "Functional Analyst 💻 passionate about learning, growth, and making things work smarter. I love tackling new challenges, optimizing processes, and exploring innovative solutions — especially in cybersecurity, where I can turn curiosity into real impact 🚀🛡️.",
-					learnMore: "Learn more",
-					aboutTitle: "About Me 💼",
-					aboutText: "I currently work as a Technical Functional Analyst in the financial sector 💰, focusing on current accounts and debt collection using various web-based applications 🌍 and the ERP Softland 📄, while also generating reports with Power BI 📈. In parallel, I have completed studies in cybersecurity 🔐, data science 📊, digital transformation 🧬, and PL/SQL 🛠️, which have strengthened my analytical mindset and expanded my technical skill set 🚀.",
-					mySkills: "My Skills 🔧",
-					skillsTitle: "Skills 🔧",
-					skillsIntro: "I enjoy working across disciplines and constantly updating my knowledge. My profile combines technical curiosity, communication skills, and an analytical mindset.",
-					techTitle: "Technologies & Tools",
-					techList: `<ul>
-								<li>Power BI 📊</li>
-								<li>SQL - PL/SQL 🗃️</li>
-								<li>Python 🐍</li>
-								<li>QA & Manual Testing 🔍</li>
-								<li>ERP Systems (Softland) 📋</li>
-								<li>Web-based applications 🌐</li>
-							  </ul>`,
-					learnFocusTitle: "Learning Focus",
-					learnFocusList: `<ul>
-									<li>Strengthening cybersecurity foundations (networking, threat modeling, risk management) 🔐</li>
-									<li>Improving Python and SQL skills for automation and analysis 🐍🗃️</li>
-									<li>Expanding data analysis techniques with Power BI and data storytelling 📊</li>
-								  </ul>`,
-					softTitle: "Soft Skills",
-					softList: `<ul>
-								<li>Analytical thinking 🧠</li>
-								<li>Autonomy and adaptability 🔄</li>
-								<li>Teamwork and communication 🗣️</li>
-								<li>Problem-solving 🧩</li>
-							   </ul>`,
-					coursesTitle: "Ongoing Courses",
-					coursesList: `<ul>
-									<li>Data Analysis – LinkedIn 🧠📊</li>
-									<li>Jr. Cybersecurity Analyst – Cisco 🔐</li>
-									<li>Python Programming – Udemy 🐍</li>
-									<li>SQL Programming – Udemy 🗃️</li>
-									<li>Software Testing (QA) – Udemy 🧪</li>
-								  </ul>`,
-					certTitle: "Completed Certifications & Languages 🎓",
-					certsHeading: "Certifications",
-					certListHtml: `<ul>
-					  <li>Accounting Assistant – Eddis Educativa – Nov. 2023</li>
-					  <li>Introduction to Cybersecurity – Fundación Telefónica – Nov. 2024</li>
-					  <li>Introduction to Cybersecurity – Cisco Networking Academy – Nov. 2024</li>
-					  <li>Introduction to Information Security – Fundación Telefónica – Nov. 2024</li>
-					  <li>Introduction to Data Science – Santander Open Academy – Mar. 2025</li>
-					  <li>Digital Transformation – Santander Open Academy – Mar. 2025</li>
-					  <li>Oracle Database Programming, PL/SQL Language - e-Learning UTN – Apr. 2025</li>
-					  <li>Introduction to Generative IA - Santander Open Academy - Jul. 2025</li>
-					  <li>Cloud Computing - Google Skillshop - Jul. 2025</li>
-					  <li>Performing a Basic Audit of yours AWS Enviroment – AWS Skill Builder – Sep. 2025</li>
-					  <li>AWS Shared Responsability Model - AWS Skill Builder – Sep. 2025</li>
-					  <li>Introduction to AWS Identity and Access Management (IAM) - AWS Skill Builder – Sep. 2025</li>
-					  <li>Introduction to AWS Key Management Service - AWS Skill Builder – Sep. 2025</li>
-					  <li>Introduction to the Threat Landscape 3.0 - Fortinet – Sep. 2025</li>
-					  <li>Networking Basics – Cisco Networking Academy – Ago. 2025</li>
-					</ul>`,
-					langsHeading: "Languages",
-					langsListHtml: `<ul>
-					  <li>Spanish – Native</li>
-					  <li>English – Intermediate · EF SET C1 Advanced · Score 65/100</li>
-					  <li>Japanese – Intermediate · JLPT N5 · Score 144/180</li>
-					</ul>`,
-					contactTitle: "Contact 📫",
-					contactText: "Find me on my professional profiles below. 🌟",
-					socialHeading: "Social Media 🌍",
-					profileAlt: "Profile image of Lucas Martinez"
-				},
-				es: {
-					navWelcome: "Inicio 👋",
-					navAbout: "Sobre mí 💼",
-					navSkills: "Habilidades 🔧",
-					navCerts: "Certificaciones 🎓",
-					navContact: "Contacto 📫",
-					introTitle: "Hola, soy Lucas Martínez 👋",
-					introText: "Analista Funcional 💻, apasionado por aprender, crecer y hacer que las cosas funcionen mejor. Me copa enfrentar nuevos desafíos, optimizar procesos y explorar soluciones innovadoras — sobre todo en ciberseguridad, donde puedo transformar la curiosidad en impacto real 🚀🛡️.",
-					learnMore: "Ver más",
-					aboutTitle: "Sobre mí 💼",
-					aboutText: "Actualmente laburo como Analista Funcional Técnico en el sector financiero 💰, enfocado en cuentas corrientes y cobranzas mediante distintas aplicaciones web 🌍 y el ERP Softland 📄; además genero reportes con Power BI 📈. En paralelo, cursé estudios en ciberseguridad 🔐, ciencia de datos 📊, transformación digital 🧬 y PL/SQL 🛠️, que fortalecieron mi mentalidad analítica y ampliaron mis habilidades técnicas 🚀.",
-					mySkills: "Mis habilidades 🔧",
-					skillsTitle: "Habilidades 🔧",
-					skillsIntro: "Disfruto laburar entre disciplinas y mantenerme al día. Mi perfil combina curiosidad técnica, buena comunicación y pensamiento analítico.",
-					techTitle: "Tecnologías y Herramientas",
-					techList: `<ul>
-								<li>Power BI 📊</li>
-								<li>SQL - PL/SQL 🗃️</li>
-								<li>Python 🐍</li>
-								<li>QA y Testing Manual 🔍</li>
-								<li>Sistemas ERP (Softland) 📋</li>
-								<li>Aplicaciones web 🌐</li>
-							  </ul>`,
-					learnFocusTitle: "Enfoque de aprendizaje",
-					learnFocusList: `<ul>
-									<li>Fortalecer bases de ciberseguridad (networking, modelado de amenazas, gestión de riesgos) 🔐</li>
-									<li>Mejorar Python y SQL para automatización y análisis 🐍🗃️</li>
-									<li>Ampliar técnicas de análisis de datos con Power BI y storytelling de datos 📊</li>
-								  </ul>`,
-					softTitle: "Habilidades blandas",
-					softList: `<ul>
-								<li>Pensamiento analítico 🧠</li>
-								<li>Autonomía y adaptabilidad 🔄</li>
-								<li>Trabajo en equipo y comunicación 🗣️</li>
-								<li>Resolución de problemas 🧩</li>
-							   </ul>`,
-					coursesTitle: "Cursos en curso",
-					coursesList: `<ul>
-									<li>Análisis de Datos – LinkedIn 🧠📊</li>
-									<li>Jr. Cybersecurity Analyst – Cisco 🔐</li>
-									<li>Programación en Python – Udemy 🐍</li>
-									<li>Programación SQL – Udemy 🗃️</li>
-									<li>Testing de Software (QA) – Udemy 🧪</li>
-								  </ul>`,
-					certTitle: "Certificaciones y Lenguajes 🎓",
-					certsHeading: "Certificaciones",
-					certListHtml: `<ul>
-					  <li>Auxiliar Contable – Eddis Educativa – Nov. 2023</li>
-					  <li>Introducción a la Ciberseguridad – Fundación Telefónica – Nov. 2024</li>
-					  <li>Introducción a la Ciberseguridad – Cisco Networking Academy – Nov. 2024</li>
-					  <li>Introducción a la Seguridad de la Información – Fundación Telefónica – Nov. 2024</li>
-					  <li>Introducción a Data Science – Santander Open Academy – Mar. 2025</li>
-					  <li>Transformación Digital – Santander Open Academy – Mar. 2025</li>
-					  <li>Oracle Database Programming, PL/SQL Language - e-Learning UTN – Abr. 2025</li>
-					  <li>Introducción a Generative IA - Santander Open Academy - Jul. 2025</li>
-					  <li>Cloud Computing - Google Skillshop - Jul. 2025</li>
-					  <li>Realización de una Auditoría Básica de tu Entorno AWS – AWS Skill Builder – Sep. 2025</li>
-					  <li>Modelo de Responsabilidad Compartida de AWS - AWS Skill Builder – Sep. 2025</li>
-					  <li>Introducción a AWS Identity and Access Management (IAM) - AWS Skill Builder – Sep. 2025</li>
-					  <li>Introducción a AWS Key Management Service - AWS Skill Builder – Sep. 2025</li>
-					  <li>Introducción al Threat Landscape 3.0 - Fortinet – Sep. 2025</li>
-					  <li>Fundamentos de Networking – Cisco Networking Academy – Ago. 2025</li>
-					</ul>`,
-					langsHeading: "Idiomas",
-					langsListHtml: `<ul>
-					  <li>Español – Nativo</li>
-					  <li>Inglés – Intermedio · EF SET C1 Advanced · Puntaje 65/100</li>
-					  <li>Japonés – Intermedio · JLPT N5 · Puntaje 144/180</li>
-					</ul>`,
-					contactTitle: "Contacto 📫",
-					contactText: "Podés encontrarme en mis perfiles profesionales abajo. 🌟",
-					socialHeading: "Redes y perfiles 🌍",
-					profileAlt: "Foto de perfil de Lucas Martínez"
-				}
-			};
-
-			// keys that should set innerHTML instead of textContent
-			const htmlKeys = new Set([
-				'techList','learnFocusList','softList','coursesList',
-				'certListHtml','langsListHtml'
-			]);
-
-			function setLanguage(lang){
-				// set text or html for every element with data-key
-				document.querySelectorAll('[data-key]').forEach(el => {
-					const key = el.getAttribute('data-key');
-					const val = translations[lang] && translations[lang][key];
-					if(typeof val === 'undefined') return; // skip missing
-					if(htmlKeys.has(key)){
-						el.innerHTML = val;
-					} else {
-						el.textContent = val;
-					}
-				});
-				// alt attributes handled separately
-				document.querySelectorAll('[data-key-alt]').forEach(el => {
-					const key = el.getAttribute('data-key-alt');
-					const val = translations[lang] && translations[lang][key];
-					if(typeof val === 'undefined') return;
-					el.alt = val;
-				});
-				// update html lang attribute
-				document.documentElement.lang = lang;
-
-				// visual active state on buttons & store choice
-				document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-				document.getElementById('btn-es').classList.toggle('active', lang === 'es');
-				try { localStorage.setItem('preferredLang', lang); } catch(e){ /* ignore */ }
-			}
-
-			// inicial: preferencia guardada o EN por defecto
-			(function initLang(){
-				let preferred = 'en';
-				try {
-					const stored = localStorage.getItem('preferredLang');
-					if(stored === 'es' || stored === 'en') preferred = stored;
-				} catch(e){}
-				setLanguage(preferred);
-			})();
-		</script>
-
-	</body>
+  </body>
 </html>
