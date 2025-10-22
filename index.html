@@ -1,248 +1,163 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Portfolio – Lucas Martinez</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lucas Martinez – Portfolio</title>
+	<style>
+		body {
+			font-family: 'Poppins', sans-serif;
+			background: #f5f6fa;
+			color: #333;
+			margin: 0;
+			padding: 0;
+			line-height: 1.6;
+			scroll-behavior: smooth;
+		}
 
-		<!-- Sidebar -->
-		<section id="sidebar">
-			<div class="inner">
-				<nav>
-					<ul>
-						<li><a href="#intro">Welcome 👋</a></li>
-						<li><a href="#one">About Me 💼</a></li>
-						<li><a href="#two">Skills 🔧</a></li>
-						<li><a href="#four">Certifications 🎓</a></li>
-						<li><a href="#three">Contact 📫</a></li>
-					</ul>
-				</nav>
-			</div>
-		</section>
+		header {
+			background: linear-gradient(135deg, #0078ff, #00c6ff);
+			color: white;
+			padding: 60px 20px;
+			text-align: center;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+		}
 
-		<!-- Wrapper -->
-		<div id="wrapper">
+		h1 {
+			font-size: 2.5em;
+			margin-bottom: 10px;
+		}
 
-			<!-- Intro -->
-			<section id="intro" class="wrapper style1 fullscreen fade-up">
-				<div class="inner">
-					<h1>Hey there, I'm Lucas Martinez 👋</h1>
-					<p>Functional Analyst 💻 passionate about learning, growth, and making things work smarter. I love tackling new challenges, optimizing processes, and exploring innovative solutions — especially in cybersecurity, where I can turn curiosity into real impact 🚀🛡️.</p>
-					<ul class="actions">
-						<li><a href="#one" class="button scrolly">Learn more</a></li>
-					</ul>
-				</div>
-			</section>
+		h2 {
+			color: #0078ff;
+			text-align: center;
+			margin-top: 40px;
+		}
 
-			<!-- One -->
-			<section id="one" class="wrapper style2 spotlights">
-				<section>
-					<a href="#" class="image"><img src="lucas.jpeg" alt="Profile image" data-position="center center"/></a>
-					<div class="content">
-						<div class="inner">
-							<h2>About Me 💼</h2>
-							<p>I currently work as a Technical Functional Analyst in the financial sector 💰, focusing on current accounts and debt collection using various web-based applications 🌍 and the ERP Softland 📄, while also generating reports with Power BI 📈. In parallel, I have completed studies in cybersecurity 🔐, data science 📊, digital transformation 🧬, and PL/SQL 🛠️, which have strengthened my analytical mindset and expanded my technical skill set 🚀.</p>
-							<ul class="actions">
-								<li><a href="#two" class="button">My Skills 🔧</a></li>
-							</ul>
-						</div>
-					</div>
-				</section>
-			</section>
+		section {
+			max-width: 900px;
+			margin: 40px auto;
+			padding: 20px;
+			background: white;
+			border-radius: 16px;
+			box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+		}
 
-			<!-- Two -->
-			<section id="two" class="wrapper style3 fade-up">
-				<div class="inner">
-					<h2>Skills 🔧</h2>
-					<p>I enjoy working across disciplines and constantly updating my knowledge. My profile combines technical curiosity, communication skills, and an analytical mindset.</p>
-					<div class="features">
-						<section>
-							<span class="icon solid major fa-code"></span>
-							<h3>Technologies & Tools</h3>
-							<ul>
-								<li>Power BI 📊</li>
-								<li>SQL - PL/SQL 🗃️</li>
-								<li>Python 🐍</li>
-								<li>QA & Manual Testing 🔍</li>
-								<li>ERP Systems (Softland) 📋</li>
-								<li>Web-based applications 🌐</li>
-							</ul>
-						</section>
-						<section>
-							<span class="icon solid major fa-shield-alt"></span>
-							<h3>Learning Focus</h3>
-							<ul>
-								<li>Strengthening cybersecurity foundations (networking, threat modeling, risk management) 🔐</li>
-								<li>Improving Python and SQL skills for automation and analysis 🐍🗃️</li>
-								<li>Expanding data analysis techniques with Power BI and data storytelling 📊</li>
-							</ul>
-						</section>
-						<section>
-							<span class="icon solid major fa-users"></span>
-							<h3>Soft Skills</h3>
-							<ul>
-								<li>Analytical thinking 🧠</li>
-								<li>Autonomy and adaptability 🔄</li>
-								<li>Teamwork and communication 🗣️</li>
-								<li>Problem-solving 🧩</li>
-							</ul>
-						</section>
-						<section>
-							<span class="icon solid major fa-satellite"></span>
-							<h3>Ongoing Courses</h3>
-							<ul>
-								<li>Data Analysis – LinkedIn 🧠📊</li>
-								<li>Jr. Cybersecurity Analyst – Cisco 🔐</li>
-								<li>Python Programming – Udemy 🐍</li>  
-								<li>SQL Programming – Udemy 🗃️</li>
-								<li>Software Testing (QA) – Udemy 🧪</li>
-							</ul>
-						</section>
-					</div>
-				</div>
-			</section>
+		button#translate-btn {
+			position: fixed;
+			bottom: 25px;
+			right: 25px;
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			background: linear-gradient(135deg, #0078ff, #00c6ff);
+			color: white;
+			font-size: 28px;
+			border: none;
+			cursor: pointer;
+			box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+			z-index: 999;
+		}
 
-			<!-- Four -->
-			<section id="four" class="wrapper style5 fade-up">
-			  <div class="inner">
-				<h2>Completed Certifications & Languages 🎓</h2>
+		button#translate-btn:hover {
+			transform: scale(1.1);
+			box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+		}
 
-				<h3><span class="icon solid fa-certificate"></span> Certifications</h3>
-				<ul>
-				  <li>Accounting Assistant – Eddis Educativa – Nov. 2023</li>
-				  <li>Introduction to Cybersecurity – Fundación Telefónica – Nov. 2024</li>
-				  <li>Introduction to Cybersecurity – Cisco Networking Academy – Nov. 2024</li>
-				  <li>Introduction to Information Security – Fundación Telefónica – Nov. 2024</li>
-				  <li>Introduction to Data Science – Santander Open Academy – Mar. 2025</li>
-				  <li>Digital Transformation – Santander Open Academy – Mar. 2025</li>
-				  <li>Oracle Database Programming, PL/SQL Language - e-Learning UTN – Apr. 2025</li>
-				  <li>Introduction to Generative IA - Santander  Open Academy - Jul. 2025</li>
-				  <li>Cloud Computing - Google Skillshop - Jul. 2025</li>
-				  <li>Performing a Basic Audit of yours AWS Enviroment – AWS Skill Builder – Sep. 2025</li>
-				  <li>AWS Shared Responsability Model - AWS Skill Builder – Sep. 2025</li>
-				  <li>Introduction to AWS Identity and Access Management (IAM) - AWS Skill Builder – Sep. 2025</li>
-				  <li>Introduction to AWS Key Management Service - AWS Skill Builder – Sep. 2025</li>
-				  <li>Introduction to the Threat Landscape 3.0 - Fortinet – Sep. 2025</li>
-				  <li>Networking Basics – Cisco Networking Academy – Ago. 2025</li>
-				</ul>
-				<h3><span class="icon solid fa-comment"></span> Languages</h3>
-				<ul>
-				  <li>Spanish – Native</li>
-				  <li>English – Intermediate · EF SET C1 Advanced · Score 65/100</li>
-				  <li>Japanese – Intermediate · JLPT N5 · Score 144/180</li>
-				</ul>
-			  </div>
-			</section>
+		footer {
+			text-align: center;
+			padding: 20px;
+			background: #f0f0f0;
+			color: #666;
+			margin-top: 40px;
+			font-size: 0.9em;
+		}
+	</style>
+</head>
 
-			<!-- Three -->
-			<section id="three" class="wrapper style1 fade-up">
-			  <div class="inner">
-				<h2>Contact 📫</h2>
-				<p>Find me on my professional profiles below. 🌟</p>
-				<div class="split style1">
-				  <section>
-					<ul class="contact">
-					  <li>
-						<h3>Social Media 🌍</h3>
-						<ul class="icons">
-						  <li><a href="https://www.linkedin.com/in/lucas-gaston-martinez/" target="_blank" class="icon brands fa-linkedin-in"> <span class="label">LinkedIn</span></a></li>
-						  <li><a href="https://github.com/LucasGM94/LucasGM94.github.io" target="_blank" class="icon brands fa-github"> <span class="label">GitHub</span></a></li>
-						</ul>
-					  </li>
-					</ul>
-				  </section>
-				</div>
-			  </div>
-			</section>
+<body>
 
-		</div>
+	<header>
+		<h1>Hey there, I'm Lucas Martinez 👋</h1>
+		<p>Functional Analyst 💻 passionate about learning, growth, and making things work smarter. I love tackling new challenges, optimizing processes, and exploring innovative solutions — especially in cybersecurity, where I can turn curiosity into real impact 🚀🛡️.</p>
+	</header>
 
-		<!-- Botón de traducción -->
-		<button id="translate-btn" style="
-	position: fixed;
-	bottom: 30px;
-	right: 30px;
-	background: #ff9800;
-	color: white;
-	border: none;
-	border-radius: 50%;
-	width: 65px;
-	height: 65px;
-	font-size: 26px;
-	box-shadow: 0 6px 12px rgba(0,0,0,0.25);
-	cursor: pointer;
-	animation: pulse 2s infinite;
-	z-index: 999;
-">🇪🇸</button>
+	<section>
+		<h2>About Me 💼</h2>
+		<p>I’m a Functional Analyst with a strong interest in cybersecurity and digital transformation. My background blends technical analysis, SQL, and process optimization — always looking for smarter, safer, and more efficient ways to build systems.</p>
+	</section>
 
-<style>
-@keyframes pulse {
-  0% { transform: scale(1); box-shadow: 0 0 0 rgba(255,152,0, 0.4); }
-  70% { transform: scale(1.08); box-shadow: 0 0 15px rgba(255,152,0, 0.4); }
-  100% { transform: scale(1); box-shadow: 0 0 0 rgba(255,152,0, 0.4); }
-}
-</style>
+	<section>
+		<h2>Skills 🔧</h2>
+		<ul>
+			<li>SQL & PL/SQL</li>
+			<li>Oracle APEX / MySQL Workbench</li>
+			<li>Software Testing & Functional Analysis</li>
+			<li>Cybersecurity Foundations</li>
+			<li>Python & Data Analysis</li>
+		</ul>
+	</section>
 
+	<section>
+		<h2>Certifications 🎓</h2>
+		<p>Completed Certifications & Languages 🎓</p>
+	</section>
 
-<script>
-const btn = document.getElementById("translate-btn");
-btn.addEventListener("mouseover", () => btn.style.backgroundColor = "#343a40");
-btn.addEventListener("mouseout", () => btn.style.backgroundColor = "#212529");
-</script>
+	<section>
+		<h2>Social Media 🌍</h2>
+		<p>Find me on my professional profiles below. 🌟</p>
+	</section>
 
+	<footer>
+		<p>© 2025 Lucas Martinez – Portfolio</p>
+	</footer>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+	<!-- 🌐 Botón de traducción -->
+	<button id="translate-btn">🌐</button>
 
-		<!-- Script de traducción -->
-		<script>
-			const translations = {
-				"Hey there, I'm Lucas Martinez 👋": "Hola, soy Lucas Martinez 👋",
-				"Functional Analyst 💻 passionate about learning, growth, and making things work smarter. I love tackling new challenges, optimizing processes, and exploring innovative solutions — especially in cybersecurity, where I can turn curiosity into real impact 🚀🛡️.": "Analista funcional 💻 apasionado por el aprendizaje, el crecimiento y hacer que las cosas funcionen de manera más inteligente. Me encanta enfrentar nuevos desafíos, optimizar procesos y explorar soluciones innovadoras — especialmente en ciberseguridad, donde puedo convertir la curiosidad en impacto real 🚀🛡️.",
-				"Learn more": "Saber más",
-				"About Me 💼": "Sobre mí 💼",
-				"My Skills 🔧": "Mis habilidades 🔧",
-				"Skills 🔧": "Habilidades 🔧",
-				"Contact 📫": "Contacto 📫",
-				"Welcome 👋": "Inicio 👋",
-				"Certifications 🎓": "Certificaciones 🎓",
-				"Completed Certifications & Languages 🎓": "Certificaciones y Idiomas 🎓",
-				"Find me on my professional profiles below. 🌟": "Encontrame en mis perfiles profesionales a continuación. 🌟",
-				"Social Media 🌍": "Redes Sociales 🌍",
-			};
+	<!-- Script de traducción -->
+	<script>
+		const translations = {
+			"Hey there, I'm Lucas Martinez 👋": "Hola, soy Lucas Martinez 👋",
+			"Functional Analyst 💻 passionate about learning, growth, and making things work smarter. I love tackling new challenges, optimizing processes, and exploring innovative solutions — especially in cybersecurity, where I can turn curiosity into real impact 🚀🛡️.": "Analista funcional 💻 apasionado por el aprendizaje, el crecimiento y hacer que las cosas funcionen de manera más inteligente. Me encanta enfrentar nuevos desafíos, optimizar procesos y explorar soluciones innovadoras — especialmente en ciberseguridad, donde puedo convertir la curiosidad en impacto real 🚀🛡️.",
+			"About Me 💼": "Sobre mí 💼",
+			"I’m a Functional Analyst with a strong interest in cybersecurity and digital transformation. My background blends technical analysis, SQL, and process optimization — always looking for smarter, safer, and more efficient ways to build systems.": "Soy Analista Funcional con un gran interés en ciberseguridad y transformación digital. Mi experiencia combina análisis técnico, SQL y optimización de procesos — siempre buscando formas más inteligentes, seguras y eficientes de construir sistemas.",
+			"Skills 🔧": "Habilidades 🔧",
+			"Certifications 🎓": "Certificaciones 🎓",
+			"Completed Certifications & Languages 🎓": "Certificaciones y Idiomas 🎓",
+			"Social Media 🌍": "Redes Sociales 🌍",
+			"Find me on my professional profiles below. 🌟": "Encontrame en mis perfiles profesionales a continuación. 🌟",
+		};
 
-			let translated = false;
-			const btn = document.getElementById("translate-btn");
+		let translated = false;
+		const btn = document.getElementById("translate-btn");
 
-			btn.addEventListener("click", () => {
-				const elements = document.querySelectorAll("body *:not(script):not(style):not(button)");
-				elements.forEach(el => {
-					if (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) {
-						const text = el.textContent.trim();
-						if (!translated && translations[text]) el.textContent = translations[text];
-						else if (translated && Object.values(translations).includes(text)) {
-							const original = Object.keys(translations).find(k => translations[k] === text);
-							el.textContent = original;
-						}
+		btn.addEventListener("click", () => {
+			const elements = document.querySelectorAll("body *:not(script):not(style):not(button)");
+			elements.forEach(el => {
+				if (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) {
+					const text = el.textContent.trim();
+					if (!translated && translations[text]) el.textContent = translations[text];
+					else if (translated && Object.values(translations).includes(text)) {
+						const original = Object.keys(translations).find(k => translations[k] === text);
+						el.textContent = original;
 					}
-				});
-				translated = !translated;
-				btn.textContent = translated ? "Translate to English 🇬🇧" : "Traducir a Español 🇪🇸";
+				}
 			});
-		</script>
+			translated = !translated;
 
-	</body>
+			// Animación y cambio de bandera
+			btn.style.transform = "rotateY(180deg)";
+			setTimeout(() => {
+				btn.textContent = translated ? "🇦🇷" : "🇬🇧";
+				btn.style.transform = "rotateY(0deg)";
+			}, 250);
+		});
+	</script>
+
+</body>
 </html>
-
-
-
