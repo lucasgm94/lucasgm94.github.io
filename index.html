@@ -198,74 +198,63 @@
     <!-- Script de traducción -->
 	<script>
 	  const translations = {
-		// Introducción
-		"Profesional con experiencia en gestión administrativa y análisis funcional, combinando enfoque operativo y visión técnica. Me motiva optimizar procesos, mejorar la eficiencia y aportar soluciones prácticas en entornos dinámicos y colaborativos.": 
-		"Professional with experience in administrative management and functional analysis, combining an operational approach with technical insight. I’m driven to optimize processes, improve efficiency, and deliver practical solutions in dynamic and collaborative environments.",
-		
-		"Saber más": "Learn more",
-
-		// Menú lateral
-		"Inicio 👋": "Home 👋",
-		"Sobre mí 💼": "About Me 💼",
-		"Habilidades 🔧": "Skills 🔧",
-		"Certificaciones 🎓": "Certifications 🎓",
-		"Contacto 📫": "Contact 📫",
-
-		// Sobre mí
-		"Tengo experiencia en el área administrativa y funcional dentro del sector financiero, gestionando procesos de cuentas corrientes, cobranzas, facturación, tesorería y control contable. Manejo ERP (Softland), herramientas de análisis como Power BI y sistemas web empresariales. Además, me formé en ciberseguridad, análisis de datos y transformación digital, fortaleciendo mi capacidad analítica y adaptabilidad tecnológica.": 
-		"I have experience in the administrative and functional area within the financial sector, managing current accounts, collections, billing, treasury, and accounting control processes. I handle ERP systems (Softland), analytical tools such as Power BI, and enterprise web systems. Additionally, I have trained in cybersecurity, data analysis, and digital transformation, strengthening my analytical ability and technological adaptability.",
-		
-		"Mis habilidades 🔧": "My Skills 🔧",
-
-		// Habilidades
-		"Disfruto trabajar de manera interdisciplinaria y actualizar constantemente mis conocimientos. Mi perfil combina curiosidad técnica, habilidades de comunicación y pensamiento analítico.": 
-		"I enjoy working across disciplines and continuously updating my knowledge. My profile combines technical curiosity, communication skills, and analytical thinking.",
-
-		"Tecnologías y Herramientas": "Technologies & Tools",
-		"Enfoque de Aprendizaje": "Learning Focus",
-		"Habilidades Blandas": "Soft Skills",
-		"Cursos en Curso": "Ongoing Courses",
-
-		// Certificaciones
-		"Certificaciones e Idiomas 🎓": "Certifications & Languages 🎓",
-		"Idiomas": "Languages",
-		"Español – Nativo": "Spanish – Native",
-		"Inglés – Intermedio · EF SET C1 Avanzado · Puntaje 65/100": "English – Intermediate · EF SET C1 Advanced · Score 65/100",
-		"Japonés – Intermedio · JLPT N5 · Puntaje 144/180": "Japanese – Intermediate · JLPT N5 · Score 144/180",
-
-		// Contacto
-		"Encontrame en mis perfiles profesionales a continuación.": "Find me on my professional profiles below.",
-		"Redes Sociales 🌍": "Social Media 🌍"
+	    "Sobre mí": "About Me",
+	    "Tengo experiencia como Analista Funcional en el sector financiero, enfocado en procesos de cuentas corrientes, facturación, tesorería, contabilidad y otros aspectos administrativos. Manejo diversos sistemas ERP y aplicaciones web, además de generar reportes y tableros en Power BI. He complementado mi perfil con estudios en ciberseguridad, ciencia de datos, transformación digital y lenguajes de programación, lo que fortaleció mi capacidad analítica y técnica.": 
+	    "I have experience as a Functional Analyst in the financial sector, focused on accounts management, billing, treasury, accounting, and other administrative processes. I handle various ERP systems and web applications, and create reports and dashboards in Power BI. I have complemented my profile with studies in cybersecurity, data science, digital transformation, and programming languages, which strengthened my analytical and technical skills.",
+	
+	    "Tecnologías y Herramientas": "Technologies & Tools",
+	    "Enfoque de Aprendizaje": "Learning Focus",
+	    "Habilidades Blandas": "Soft Skills",
+	    "Cursos en Curso": "Courses in Progress",
+	
+	    "Fortalecer fundamentos de ciberseguridad (redes, modelado de amenazas, gestión de riesgos)": 
+	    "Strengthen cybersecurity fundamentals (networks, threat modeling, risk management)",
+	    "Mejorar habilidades en Python y SQL para automatización y análisis": 
+	    "Improve Python and SQL skills for automation and analysis",
+	    "Ampliar técnicas de análisis de datos con Power BI y data storytelling": 
+	    "Expand data analysis techniques with Power BI and data storytelling",
+	
+	    "Pensamiento analítico para evaluar información y tomar decisiones basadas en datos":
+	    "Analytical thinking to evaluate information and make data-driven decisions",
+	    "Autonomía y adaptabilidad para trabajar de manera independiente y ajustarme a distintos entornos":
+	    "Autonomy and adaptability to work independently and adjust to different environments",
+	    "Trabajo en equipo y comunicación efectiva para colaborar y transmitir ideas claramente":
+	    "Teamwork and effective communication to collaborate and convey ideas clearly",
+	    "Resolución de problemas mediante enfoque estructurado y creativo":
+	    "Problem-solving through a structured and creative approach"
 	  };
-
-	  let translated = false;
-	  const btn = document.getElementById("translate-btn");
-
-	  btn.addEventListener("click", () => {
-		const elements = document.querySelectorAll("body *:not(script):not(style):not(button)");
-		elements.forEach(el => {
-		  if (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) {
-			const text = el.textContent.trim();
-			if (!translated && translations[text]) {
-			  el.textContent = translations[text];
-			} else if (translated && Object.values(translations).includes(text)) {
-			  const original = Object.keys(translations).find(k => translations[k] === text);
-			  el.textContent = original;
-			}
-		  }
-		});
-
-		translated = !translated;
-		btn.style.transform = "rotateY(180deg)";
-		setTimeout(() => {
-		  btn.textContent = translated ? "es" : "en";
-		  btn.style.transform = "rotateY(0deg)";
-		}, 250);
+	
+	  let currentLang = "es";
+	  const button = document.getElementById("translate-btn");
+	
+	  button.addEventListener("click", () => {
+	    const elements = document.querySelectorAll("body *");
+	    elements.forEach(el => {
+	      if (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) {
+	        let text = el.textContent.trim();
+	
+	        // Recorre todas las traducciones y reemplaza coincidencias parciales
+	        for (const [es, en] of Object.entries(translations)) {
+	          if (text.includes(es)) {
+	            el.textContent = currentLang === "es" 
+	              ? text.replace(es, en)
+	              : text.replace(en, es);
+	          }
+	        }
+	      }
+	    });
+	
+	    // Cambia idioma actual y anima el botón
+	    currentLang = currentLang === "es" ? "en" : "es";
+	    button.textContent = currentLang === "es" ? "🌐" : "ES";
+	    button.style.transform = "rotate(360deg)";
+	    setTimeout(() => button.style.transform = "rotate(0deg)", 300);
 	  });
 	</script>
 
   </body>
 </html>
+
 
 
 
