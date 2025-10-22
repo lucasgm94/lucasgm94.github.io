@@ -198,14 +198,10 @@
 
     <!-- Script de traducción corregido -->
     <script>
-      // Objeto con traducciones
       const translations = {
-        // Introducción
         "Hey there, I'm Lucas Martinez 👋": "Hola, soy Lucas Martinez 👋",
         "Functional Analyst 💻 passionate about learning, growth, and making things work smarter. I love tackling new challenges, optimizing processes, and exploring innovative solutions — especially in cybersecurity, where I can turn curiosity into real impact 🚀🛡️.": "Analista funcional 💻 apasionado por el aprendizaje, el crecimiento y hacer que las cosas funcionen de manera más inteligente. Me encanta enfrentar nuevos desafíos, optimizar procesos y explorar soluciones innovadoras — especialmente en ciberseguridad, donde puedo convertir la curiosidad en impacto real 🚀🛡️.",
         "Learn more": "Saber más",
-    
-        // Menú lateral
         "Welcome 👋": "Inicio 👋",
         "About Me 💼": "Sobre mí 💼",
         "Skills 🔧": "Habilidades 🔧",
@@ -213,8 +209,6 @@
         "Certifications 🎓": "Certificaciones 🎓",
         "Completed Certifications & Languages 🎓": "Certificaciones y Idiomas 🎓",
         "Contact 📫": "Contacto 📫",
-    
-        // Contacto
         "Find me on my professional profiles below. 🌟": "Encontrame en mis perfiles profesionales a continuación. 🌟",
         "Social Media 🌍": "Redes Sociales 🌍"
       };
@@ -222,26 +216,22 @@
       let translated = false;
       const btn = document.getElementById("translate-btn");
     
-      btn.addEventListener("click", () => {
-        // Seleccionamos todos los elementos de texto dentro del body
-        const elements = document.querySelectorAll("body *:not(script):not(style):not(button)");
-    
-        elements.forEach(el => {
-          if (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) { // solo nodos de texto directo
-            const text = el.textContent.trim();
-    
-            if (!translated) {
-              // Si está en inglés y hay traducción a español
-              if (translations[text]) el.textContent = translations[text];
-            } else {
-              // Si está en español y queremos volver a inglés
-              const original = Object.keys(translations).find(key => translations[key] === text);
-              if (original) el.textContent = original;
-            }
+      function translateNode(node) {
+        if (node.nodeType === 3) { // Nodo de texto
+          const text = node.nodeValue.trim();
+          if (!translated && translations[text]) {
+            node.nodeValue = translations[text];
+          } else if (translated) {
+            const original = Object.keys(translations).find(key => translations[key] === text);
+            if (original) node.nodeValue = original;
           }
-        });
+        } else {
+          node.childNodes.forEach(child => translateNode(child));
+        }
+      }
     
-        // Alternamos el estado y cambiamos ícono/texto del botón
+      btn.addEventListener("click", () => {
+        translateNode(document.body);
         translated = !translated;
         btn.style.transform = "rotateY(180deg)";
         setTimeout(() => {
@@ -250,6 +240,8 @@
         }, 250);
       });
     </script>
+
   </body>
 </html>
+
 
