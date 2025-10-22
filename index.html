@@ -160,4 +160,97 @@
             </section>
           </div>
         </div>
-      <
+      </section>
+
+    </div>
+
+    <!-- 🌐 Botón de traducción -->
+    <button id="translate-btn" style="
+        position: fixed;
+        bottom: 12px;
+        right: 12px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #0078ff, #00c6ff);
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease;
+        z-index: 999;
+        opacity: 0.85;
+    ">🌐</button>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Script de traducción corregido -->
+    <script>
+      const translations = {
+        "Sobre mí": "About Me",
+        "Tengo experiencia como Analista Funcional en el sector financiero, enfocado en cuentas corrientes, cobranzas, facturación, tesorería, contabilidad y otros procesos administrativos, utilizando diversas aplicaciones web y sistemas ERP, además de generar reportes con Power BI. Paralelamente, he completado estudios en ciberseguridad, ciencia de datos, transformación digital y lenguajes de programación, lo que fortaleció mi mentalidad analítica y amplió mis habilidades técnicas.":
+        "I have experience as a Functional Analyst in the financial sector, focused on current accounts, collections, billing, treasury, accounting, and other administrative processes, using various web applications and ERP systems, as well as generating reports with Power BI. Additionally, I have completed studies in cybersecurity, data science, digital transformation, and programming languages, which strengthened my analytical mindset and expanded my technical skills.",
+
+        "Tecnologías y Herramientas": "Technologies & Tools",
+        "Enfoque de Aprendizaje": "Learning Focus",
+        "Habilidades Blandas": "Soft Skills",
+        "Cursos en Curso": "Courses in Progress",
+
+        "Fortalecer fundamentos de ciberseguridad: redes, modelado de amenazas y gestión de riesgos":
+        "Strengthen cybersecurity fundamentals: networks, threat modeling, and risk management",
+        "Optimizar habilidades en Python y SQL para automatización de procesos y análisis de datos":
+        "Optimize Python and SQL skills for process automation and data analysis",
+        "Ampliar técnicas de análisis de datos mediante Power BI y storytelling de información":
+        "Expand data analysis techniques through Power BI and data storytelling",
+        "Actualizar conocimientos en tecnologías emergentes y transformación digital":
+        "Update knowledge on emerging technologies and digital transformation",
+
+        "Pensamiento analítico para evaluar información y tomar decisiones basadas en datos":
+        "Analytical thinking to evaluate information and make data-driven decisions",
+        "Autonomía y adaptabilidad para trabajar de manera independiente y ajustarme a distintos entornos":
+        "Autonomy and adaptability to work independently and adjust to different environments",
+        "Trabajo en equipo y comunicación efectiva para colaborar y transmitir ideas claramente":
+        "Teamwork and effective communication to collaborate and convey ideas clearly",
+        "Resolución de problemas mediante enfoque estructurado y creativo":
+        "Problem-solving through a structured and creative approach"
+      };
+
+      let currentLang = "es";
+      const button = document.getElementById("translate-btn");
+
+      button.addEventListener("click", () => {
+        const elements = document.querySelectorAll("body *");
+        elements.forEach(el => {
+          if (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) {
+            let text = el.textContent.trim();
+            for (const [es, en] of Object.entries(translations)) {
+              if (text.includes(es)) {
+                el.textContent = currentLang === "es" 
+                  ? text.replace(es, en)
+                  : text.replace(en, es);
+              }
+            }
+          }
+        });
+
+        currentLang = currentLang === "es" ? "en" : "es";
+        button.textContent = currentLang === "es" ? "🌐" : "ES";
+        button.style.transform = "rotate(360deg)";
+        setTimeout(() => button.style.transform = "rotate(0deg)", 300);
+      });
+    </script>
+
+  </body>
+</html>
