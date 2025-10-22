@@ -198,59 +198,58 @@
 
     <!-- Script de traducción corregido -->
     <script>
+      // Objeto con traducciones
       const translations = {
-        "Sobre mí": "About Me",
-        "Tengo experiencia como Analista Funcional en el sector financiero, enfocado en cuentas corrientes, cobranzas, facturación, tesorería, contabilidad y otros procesos administrativos, utilizando diversas aplicaciones web y sistemas ERP, además de generar reportes con Power BI. Paralelamente, he completado estudios en ciberseguridad, ciencia de datos, transformación digital y lenguajes de programación, lo que fortaleció mi mentalidad analítica y amplió mis habilidades técnicas.":
-        "I have experience as a Functional Analyst in the financial sector, focused on current accounts, collections, billing, treasury, accounting, and other administrative processes, using various web applications and ERP systems, as well as generating reports with Power BI. Additionally, I have completed studies in cybersecurity, data science, digital transformation, and programming languages, which strengthened my analytical mindset and expanded my technical skills.",
-
-        "Tecnologías y Herramientas": "Technologies & Tools",
-        "Enfoque de Aprendizaje": "Learning Focus",
-        "Habilidades Blandas": "Soft Skills",
-        "Cursos en Curso": "Courses in Progress",
-
-        "Fortalecer fundamentos de ciberseguridad: redes, modelado de amenazas y gestión de riesgos":
-        "Strengthen cybersecurity fundamentals: networks, threat modeling, and risk management",
-        "Optimizar habilidades en Python y SQL para automatización de procesos y análisis de datos":
-        "Optimize Python and SQL skills for process automation and data analysis",
-        "Ampliar técnicas de análisis de datos mediante Power BI y storytelling de información":
-        "Expand data analysis techniques through Power BI and data storytelling",
-        "Actualizar conocimientos en tecnologías emergentes y transformación digital":
-        "Update knowledge on emerging technologies and digital transformation",
-
-        "Pensamiento analítico para evaluar información y tomar decisiones basadas en datos":
-        "Analytical thinking to evaluate information and make data-driven decisions",
-        "Autonomía y adaptabilidad para trabajar de manera independiente y ajustarme a distintos entornos":
-        "Autonomy and adaptability to work independently and adjust to different environments",
-        "Trabajo en equipo y comunicación efectiva para colaborar y transmitir ideas claramente":
-        "Teamwork and effective communication to collaborate and convey ideas clearly",
-        "Resolución de problemas mediante enfoque estructurado y creativo":
-        "Problem-solving through a structured and creative approach"
+        // Introducción
+        "Hey there, I'm Lucas Martinez 👋": "Hola, soy Lucas Martinez 👋",
+        "Functional Analyst 💻 passionate about learning, growth, and making things work smarter. I love tackling new challenges, optimizing processes, and exploring innovative solutions — especially in cybersecurity, where I can turn curiosity into real impact 🚀🛡️.": "Analista funcional 💻 apasionado por el aprendizaje, el crecimiento y hacer que las cosas funcionen de manera más inteligente. Me encanta enfrentar nuevos desafíos, optimizar procesos y explorar soluciones innovadoras — especialmente en ciberseguridad, donde puedo convertir la curiosidad en impacto real 🚀🛡️.",
+        "Learn more": "Saber más",
+    
+        // Menú lateral
+        "Welcome 👋": "Inicio 👋",
+        "About Me 💼": "Sobre mí 💼",
+        "Skills 🔧": "Habilidades 🔧",
+        "My Skills 🔧": "Mis habilidades 🔧",
+        "Certifications 🎓": "Certificaciones 🎓",
+        "Completed Certifications & Languages 🎓": "Certificaciones y Idiomas 🎓",
+        "Contact 📫": "Contacto 📫",
+    
+        // Contacto
+        "Find me on my professional profiles below. 🌟": "Encontrame en mis perfiles profesionales a continuación. 🌟",
+        "Social Media 🌍": "Redes Sociales 🌍"
       };
-
-      let currentLang = "es";
-      const button = document.getElementById("translate-btn");
-
-      button.addEventListener("click", () => {
-        const elements = document.querySelectorAll("body *");
+    
+      let translated = false;
+      const btn = document.getElementById("translate-btn");
+    
+      btn.addEventListener("click", () => {
+        // Seleccionamos todos los elementos de texto dentro del body
+        const elements = document.querySelectorAll("body *:not(script):not(style):not(button)");
+    
         elements.forEach(el => {
-          if (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) {
-            let text = el.textContent.trim();
-            for (const [es, en] of Object.entries(translations)) {
-              if (text.includes(es)) {
-                el.textContent = currentLang === "es" 
-                  ? text.replace(es, en)
-                  : text.replace(en, es);
-              }
+          if (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) { // solo nodos de texto directo
+            const text = el.textContent.trim();
+    
+            if (!translated) {
+              // Si está en inglés y hay traducción a español
+              if (translations[text]) el.textContent = translations[text];
+            } else {
+              // Si está en español y queremos volver a inglés
+              const original = Object.keys(translations).find(key => translations[key] === text);
+              if (original) el.textContent = original;
             }
           }
         });
-
-        currentLang = currentLang === "es" ? "en" : "es";
-        button.textContent = currentLang === "es" ? "🌐" : "ES";
-        button.style.transform = "rotate(360deg)";
-        setTimeout(() => button.style.transform = "rotate(0deg)", 300);
+    
+        // Alternamos el estado y cambiamos ícono/texto del botón
+        translated = !translated;
+        btn.style.transform = "rotateY(180deg)";
+        setTimeout(() => {
+          btn.textContent = translated ? "es" : "en";
+          btn.style.transform = "rotateY(0deg)";
+        }, 250);
       });
     </script>
-
   </body>
 </html>
+
