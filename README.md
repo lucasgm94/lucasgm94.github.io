@@ -8,12 +8,6 @@ This portfolio was built to present my work and highlight the areas I'm passiona
 
 The website is hosted with **GitHub Pages** and serves as my main online presence.
 
-## 🧩 Sections
-- **About Me** – A brief introduction and professional summary  
-- **Projects** – A selection of personal and technical projects  
-- **Cybersecurity Labs** – Documentation of hands-on learning exercises  
-- **Contact** – Ways to reach out or connect professionally  
-
 ## ⚙️ Technologies Used
 - HTML5, CSS3, JavaScript  
 - GitHub Pages for hosting  
